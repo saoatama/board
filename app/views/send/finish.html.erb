@@ -1,0 +1,25 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<p id="finish"><%= params[:receiver_name] %>
+さんにメッセージを送信しました。詳しくはご縁があればきっと連絡がきます。気長に待ちましょう。</p>
+
+<p>送信した内容</p>
+<table id="sent">
+  <thread>
+    <tr>
+      <th>名前</th>
+      <th>メールアドレス</th>
+      <th>メッセージ</th>
+    </tr>
+  </thread>
+  <tbody>
+    <tr>
+      <td><%= params[:name] %></td>
+      <td><%= params[:address] %></td>
+      <td><%= params[:text] %><td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to '閲覧を続ける', '/posts' %>

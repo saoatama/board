@@ -1,0 +1,12 @@
+<%= form_tag({controller: :send, action: :finish}, id: :fm, class: :finish) do %>
+<label for="finish">名前</label>
+  <%= text_field_tag :name, '', size: 30 %>
+<label for="finish">メールアドレス</label>
+  <%= text_field_tag :address, '', size: 50 %>
+  <label for="finish">メッセージ本文</label>
+  <%= text_area :text, '', size: 200 %>
+  <%= hidden_field_tag :receiver_name, value="#{@post.name}" %>
+  <%= hidden_field_tag :receiver_address, value="#{@post.mail_address}" %>
+
+  <%= submit_tag '送信' %>
+<% end %>

@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Back', posts_path %>
+
+<%= link_to '編集する', edit_post_path(@post) %>
+
+<p>
+  <strong>名前:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <%= @post.relationship %>
+</p>
+
+<p>
+  <strong>年齢:</strong>
+  <%= @post.year %>
+</p>
+
+<p>
+  <strong>住み:</strong>
+  <%= @post.place %>
+</p>
+
+<p id="message">
+  <%= @post.message %>
+</p>
+
+<p>
+  <strong>メアド：</strong>
+  <%= @post.mail_address %>
+</p>
+
+
+<div id="page_top">
+  <a href="#">pagetop</a>
+</div>

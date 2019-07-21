@@ -1,0 +1,58 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, '名前' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title, 'タイトル' %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relationship, '募集しているのは？' %>
+    <label><%= form.radio_button :relationship, '友人', class: :rd %>友人</label>
+    <label><%= form.radio_button :relationship, '恋人', class: :rd %>恋人</label>
+  </div>
+
+  <div class="dropdown">
+    <%= form.label :year, '年齢' %>
+    <%= form.select :year, [["10代後半","10代後半"],["20代前半","20代前半"],["20代後半","20代後半"],["30代前半","30代後前半"],["30代後半","30代後半"],["アラフォー","アラフォー"],["アラフィフ","アラフィフ"],["アラ還","アラ還"],["高齢","高齢"]] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :place %>
+    <%= form.text_field :place %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message, '本文' %>
+    <%= form.text_area :message %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mail_address, 'メアド' %>
+    <%= form.text_field :mail_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password, 'パスワード' %>
+    <p>6文字以上英数字でお願いします</p>
+    <%= form.text_field :password %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

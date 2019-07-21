@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'back', posts_url %>
+<%= form_tag({controller: :posts, action: :check}, id: :fm, class: :finish) do %>
+  <%= text_field_tag :password, '', size: 30 %>
+  <%= hidden_field_tag :id, "#{@post.id}", size: 30 %>
+  <%= submit_tag '編集する' %>
+<% end %>
+
+<p>
+  <strong>名前:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <%= @post.relationship %>
+</p>
+
+<p>
+  <strong>年齢:</strong>
+  <%= @post.year %>
+</p>
+
+<p>
+  <strong>住み:</strong>
+  <%= @post.place %>
+</p>
+
+<p id="message">
+  <%= @post.message %>
+</p>
+
+
+<%= link_to "#{@post.name}さんにメッセージを送る", "/send/#{@post.id}" %>
+<div id="page_top">
+  <a href="#">pagetop</a>
+</div>
