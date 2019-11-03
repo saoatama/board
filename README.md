@@ -1,24 +1,11 @@
-# README
+# 掲示板サイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 作成意図
+- Rails練習
+- よく掲示板を使うので自分でも作ってみたくなった。
 
-Things you may want to cover:
+## 反省点
+- デザインがダサい
+- 多分Javascriptを学ぶ前なので動かない
+- 未完
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
